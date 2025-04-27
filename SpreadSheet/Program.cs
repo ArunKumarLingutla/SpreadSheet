@@ -12,8 +12,8 @@ namespace SpreadSheet
         {
             Data data = new Data();
             Create.CreateSpreadsheetWorkbook("E:\\Spreadsheet\\Create.xlsx");
-            //Create.InsertData("E:\\Spreadsheet\\Create.xlsx", "Hello World");
-            Create.InsertData("E:\\Spreadsheet\\Create2.xlsx", data.myData,"SHEET1");
+            Create.InsertData("E:\\Spreadsheet\\Create.xlsx", data.myData, "mySheet");
+            Create.ReadExcelFileDOM("E:\\Spreadsheet\\Create.xlsx");
         }
     }
 }

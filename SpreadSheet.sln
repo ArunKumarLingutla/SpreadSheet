@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35312.102
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadSheet", "SpreadSheet\SpreadSheet.csproj", "{EE51B00F-E609-4283-87DB-59025C9E73E4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpreadSheetTest", "SpreadSheetTest\SpreadSheetTest.csproj", "{5BA706CD-6F18-4FF3-B136-05F9B6655DE0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EE51B00F-E609-4283-87DB-59025C9E73E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EE51B00F-E609-4283-87DB-59025C9E73E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EE51B00F-E609-4283-87DB-59025C9E73E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BA706CD-6F18-4FF3-B136-05F9B6655DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BA706CD-6F18-4FF3-B136-05F9B6655DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BA706CD-6F18-4FF3-B136-05F9B6655DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BA706CD-6F18-4FF3-B136-05F9B6655DE0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

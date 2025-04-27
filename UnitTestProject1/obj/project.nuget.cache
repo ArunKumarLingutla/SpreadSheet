@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "eRbkz4Hq0ek=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\arunk\\source\\repos\\SpreadSheet\\UnitTestProject1\\SpreadSheetTest.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\arunk\\.nuget\\packages\\mstest.testadapter\\2.2.10\\mstest.testadapter.2.2.10.nupkg.sha512",
+    "C:\\Users\\arunk\\.nuget\\packages\\mstest.testframework\\2.2.10\\mstest.testframework.2.2.10.nupkg.sha512"
+  ],
+  "logs": []
+}

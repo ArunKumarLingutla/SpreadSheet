@@ -103,7 +103,27 @@ namespace SpreadSheet
                 //// Insert a new worksheet.
                 //WorksheetPart worksheetPart = UtilityFunctions.InsertWorksheet(workbookPart);
 
-                for (int i = 0; i < inputData.Count; i++) // Rows
+                // Insert header row
+                if (inputData.Count > 0)
+                {
+                    List<string> headerRow = inputData[0];
+                    for (int j = 0; j < headerRow.Count; j++)
+                    {
+                        string columnName = UtilityFunctions.GetColumnNameFromIndex(j);
+                        uint rowIndex = 1; // Header is always the first row (row 1)
+
+                        Cell cell = UtilityFunctions.InsertCellInWorksheet(columnName, rowIndex, worksheetPart);
+
+                        string value = headerRow[j];
+
+                        // Always treat header as string
+                        int index = UtilityFunctions.InsertSharedStringItem(value, shareStringPart);
+                        cell.CellValue = new CellValue(index.ToString());
+                        cell.DataType = new EnumValue<CellValues>(CellValues.SharedString);
+                    }
+                }
+
+                for (int i = 1; i < inputData.Count; i++) // Rows
                 {
                     for (int j = 0; j < inputData[i].Count; j++) // Columns
                     {
@@ -194,5 +214,52 @@ namespace SpreadSheet
                 result.DataType = new EnumValue<CellValues>(CellValues.SharedString);
             }
         }
+
+        // The DOM approach.
+        // Note that the code below works only for cells that contain numeric values
+        public static void ReadExcelFileDOM(string fileName)
+        {
+            using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(fileName, false))
+            {
+                WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart;
+                SharedStringTablePart sharedStringPart = workbookPart.GetPartsOfType<SharedStringTablePart>().FirstOrDefault();
+                WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
+                SheetData sheetData = worksheetPart.Worksheet.Elements<SheetData>().First();
+
+                foreach (Row r in sheetData.Elements<Row>())
+                {
+                    foreach (Cell c in r.Elements<Cell>())
+                    {
+                        string value = UtilityFunctions.GetCellValue(c, sharedStringPart);
+                        Console.Write(value + " ");
+                    }
+                    Console.WriteLine();
+                }
+                Console.ReadKey();
+            }
+        }
+
+        //// The SAX approach.
+        //public static void ReadExcelFileSAX(string fileName)
+        //{
+        //    using (SpreadsheetDocument spreadsheetDocument = SpreadsheetDocument.Open(fileName, false))
+        //    {
+        //        WorkbookPart workbookPart = spreadsheetDocument.WorkbookPart ?? spreadsheetDocument.AddWorkbookPart();
+        //        WorksheetPart worksheetPart = workbookPart.WorksheetParts.First();
+
+        //        OpenXmlReader reader = OpenXmlReader.Create(worksheetPart);
+        //        string text;
+        //        while (reader.Read())
+        //        {
+        //            if (reader.ElementType == typeof(CellValue))
+        //            {
+        //                text = reader.GetText();
+        //                Console.Write(text + " ");
+        //            }
+        //        }
+        //        Console.WriteLine();
+        //        Console.ReadKey();
+        //    }
+        //}
     }
 }

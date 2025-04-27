@@ -229,7 +229,24 @@ namespace SpreadSheet
                 return true;
             }
         }
-        
+        public static string GetCellValue(Cell cell, SharedStringTablePart sharedStringPart)
+        {
+            if (cell == null || cell.CellValue == null)
+                return "";
+
+            string value = cell.CellValue.InnerText;
+
+            if (cell.DataType != null && cell.DataType.Value == CellValues.SharedString)
+            {
+                if (sharedStringPart != null)
+                {
+                    return sharedStringPart.SharedStringTable.ElementAt(int.Parse(value)).InnerText;
+                }
+            }
+
+            return value; // For numbers, return as is
+        }
+
 
     }
 }
