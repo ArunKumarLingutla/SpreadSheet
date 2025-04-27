@@ -1,0 +1,10 @@
+C:\Users\arunk\source\repos\SpreadSheet\SpreadSheet\bin\Debug\SpreadSheet.exe.config
+C:\Users\arunk\source\repos\SpreadSheet\SpreadSheet\bin\Debug\SpreadSheet.exe
+C:\Users\arunk\source\repos\SpreadSheet\SpreadSheet\bin\Debug\SpreadSheet.pdb
+C:\Users\arunk\source\repos\SpreadSheet\SpreadSheet\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\arunk\source\repos\SpreadSheet\SpreadSheet\bin\Debug\DocumentFormat.OpenXml.Framework.dll
+C:\Users\arunk\source\repos\SpreadSheet\SpreadSheet\obj\Debug\SpreadSheet.csproj.AssemblyReference.cache
+C:\Users\arunk\source\repos\SpreadSheet\SpreadSheet\obj\Debug\SpreadSheet.csproj.CoreCompileInputs.cache
+C:\Users\arunk\source\repos\SpreadSheet\SpreadSheet\obj\Debug\SpreadSh.795C2F81.Up2Date
+C:\Users\arunk\source\repos\SpreadSheet\SpreadSheet\obj\Debug\SpreadSheet.exe
+C:\Users\arunk\source\repos\SpreadSheet\SpreadSheet\obj\Debug\SpreadSheet.pdb
