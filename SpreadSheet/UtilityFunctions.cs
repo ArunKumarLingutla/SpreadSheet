@@ -207,6 +207,16 @@ namespace SpreadSheet
                 }
             }
             return null; // No worksheet found with the given name
+            
+            ////This code will work without foreachloop, may be efficient than above, Try it........
+            //Sheet sheet = workbookPart.Workbook.Sheets.Elements<Sheet>().FirstOrDefault(s => s.Name == sheetName);
+            //if (sheet != null)
+            //{
+                //string relationshipId = sheet.Id.Value;
+                //WorksheetPart worksheetPart = (WorksheetPart)workbookPart.GetPartById(relationshipId);
+                //return worksheetPart;
+            //}
+            //return null; // No worksheet found with the given name
         }
         // Helper method to get the first available worksheet
         public static WorksheetPart GetFirstWorksheetPart(WorkbookPart workbookPart)
